@@ -1,0 +1,13 @@
+<%- include('./partials/head', {tituloPagina:'inicio'}) %>
+  <body>
+
+    <h1>Búsqueda de Pokemon</h1>
+    <form action="/pokemon" method="GET">
+      <label for="nombre-pokemon">Nombre del Pokemon:</label>
+      <input type="text" id="nombre-pokemon" name="nombre_pokemon">
+    
+      <button type="submit">Buscar</button>
+    </form>
+   
+  </body>
+  </html>

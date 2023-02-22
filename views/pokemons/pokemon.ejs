@@ -1,0 +1,23 @@
+<%- include('../partials/head',{tituloPagina:'Busqueda Pokemon'}) %>
+<body>
+    <form action="/pokemon" method="GET">
+        <label for="nombre-pokemon">Nombre del Pokemon:</label>
+        <input type="text" id="nombre-pokemon" name="nombre_pokemon">
+     
+        <button type="submit">Buscar</button>
+      </form>
+  <h1>Información del Pokémon:</h1>
+  <% if (pokemon) { %>
+    <ul>
+      <li><strong>Nombre:</strong> <%= pokemon.name %></li>
+      <li><strong>Número de Pokédex:</strong> <%= pokemon.id %></li>
+      <li><strong>Altura:</strong> <%= pokemon.height %> dm</li>
+      <li><strong>Peso:</strong> <%= pokemon.weight %> hg</li>
+      <li><strong>Tipo:</strong> <%= pokemon.types[0] %></li>
+      <li><strong>Imagen:</strong> <img src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>"></li>
+    </ul>
+  <% } else { %>
+    <p>No se encontró ningún Pokémon con ese nombre.</p>
+  <% } %>
+</body>
+</html>
