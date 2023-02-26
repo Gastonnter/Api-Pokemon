@@ -10,6 +10,9 @@ var pokemonRouter = require('./routes/pokemon');
 
 var app = express();
 
+const publicFolderPath = path.resolve('public');
+app.use(express.static(publicFolderPath))
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

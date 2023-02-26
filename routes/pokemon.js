@@ -1,8 +1,11 @@
-var express = require('express');
-var router = express.Router();
-const pokemonController =require('../controllers/pokemonController')
+const express = require('express');
+const router = express.Router();
 
-/*Ruta para buscar por nombre el Pokemon */ 
+
+const pokemonController = require ('../controllers/pokemon/pokemonController')
+
+
+/* GET home page. */
 router.get('/', pokemonController.searchPokemonByName);
 
-module.exports = router
+module.exports = router;

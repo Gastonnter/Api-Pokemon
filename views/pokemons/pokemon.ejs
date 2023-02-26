@@ -1,5 +1,9 @@
-<%- include('../partials/head',{tituloPagina:'Busqueda Pokemon'}) %>
+<%- include('../partials/head',{tituloPagina:'Busqueda Pokemon',stylesheet:'style.css'}) %>
 <body>
+
+
+  <a href="/">Volver al inicio</a>
+
     <form action="/pokemon" method="GET">
         <label for="nombre-pokemon">Nombre del Pokemon:</label>
         <input type="text" id="nombre-pokemon" name="nombre_pokemon">

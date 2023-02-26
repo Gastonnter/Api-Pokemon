@@ -1,8 +1,78 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+.pokemon-type {
+  color: black;
+  text-align: center;
+  overflow: hidden; /* Evita que el texto se muestre antes de la animación */
+  animation-name: slide-in;
+  animation-duration: 5s; /* Duración de la animación en segundos */
+  animation-fill-mode: forwards; /* Define cómo se aplican los valores de estilo después de la animación */
+  animation: slide-in 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-a {
-  color: #00B7FF;
+/* Define la animación */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-50);
+  }
+  75% {
+    transform: translateX(-75);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.pokemon-container {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+  height: 500px; /* ajusta la altura según tu preferencia */
+  z-index: 1; /* asegura que el contenido quede por encima del video */
+  color: white; /* establece un color de texto para que se note sobre el fondo oscuro */
+}
+
+.pokemon-container h1 {
+  margin-bottom: 20px;
+  
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pokemon-item {
+  width: 200px;
+  height: 250px;
+  background-color: #f2f2f2;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.pokemon-item:hover {
+  box-shadow: 0px 5px 10px rgb(226, 255, 3);
+}
+
+.pokemon-name {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.pokemon-image {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.pokemon-details {
+  font-size: 14px;
+  margin-top: 5px;
 }
