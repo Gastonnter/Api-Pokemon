@@ -1,67 +1,29 @@
 <%- include('./partials/head', {tituloPagina:'inicio', stylesheet:'style.css'}) %>
 
+<%- include('./partials/header', {}) %>
 <body>
-    <H1>Pokemon Cart</H1>
-    <a href="/pokemon">Buscar Pokémon</a>
+  
+
+  <h1></h1>
+  <a href="/pokemon">Buscar Pokémon</a>
+
   <div class="pokemon-container">
-    <!--POKEMON DE FUEGO  -->
-    <h2 class="pokemon-type">Fire Type Pokémon</h2>
     <ul class="pokemon-list">
-      <% firePokemon.forEach(function(pokemon) { %>
-      <li class="pokemon-item">
-        <h3 class="pokemon-name"><%= pokemon.name %></h3>
-        <img class="pokemon-image" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-        <p class="pokemon-details">Height: <%= pokemon.height %></p>
-        <p class="pokemon-details">Weight: <%= pokemon.weight %></p>
-        <p class="pokemon-details">Type(s): <%= pokemon.types.join(', ') %></p>
-      </li>
-      <% }); %>
-    </ul>
-
-    <!--POKEMON DE AIRE  -->
-    <h2 class="pokemon-type">Flying Type Pokémon</h2>
-    <ul class="pokemon-list">
-      <% airPokemon.forEach(function(pokemon) { %>
-      <li class="pokemon-item">
-        <h3 class="pokemon-name"><%= pokemon.name %></h3>
-        <img class="pokemon-image" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-        <p class="pokemon-details">Height: <%= pokemon.height %></p>
-        <p class="pokemon-details">Weight: <%= pokemon.weight %></p>
-        <p class="pokemon-details">Type(s): <%= pokemon.types.join(', ') %></p>
-      </li>
-      <% }); %>
-    </ul>
-
-    <!--POKEMON DE AGUA  -->
-    <h2 class="pokemon-type">Water Type Pokémon</h2>
-    <ul class="pokemon-list">
-      <% waterPokemon.forEach(function(pokemon) { %>
-      <li class="pokemon-item">
-        <h3 class="pokemon-name"><%= pokemon.name %></h3>
-        <img class="pokemon-image" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-        <p class="pokemon-details">Height: <%= pokemon.height %></p>
-        <p class="pokemon-details">Weight: <%= pokemon.weight %></p>
-        <p class="pokemon-details">Type(s): <%= pokemon.types.join(', ') %></p>
-      </li>
-      <% }); %>
-    </ul>
-
-
-    <!--POKEMON DE TIERRA  -->
-    <h2 class="pokemon-type">Ground Type Pokémon</h2>
-    <ul class="pokemon-list">
-      <% groundPokemon.forEach(function(pokemon) { %>
-      <li class="pokemon-item">
-        <h3 class="pokemon-name"><%= pokemon.name %></h3>
-        <img class="pokemon-image" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
-        <p class="pokemon-details">Height: <%= pokemon.height %></p>
-        <p class="pokemon-details">Weight: <%= pokemon.weight %></p>
-        <p class="pokemon-details">Type(s): <%= pokemon.types.join(', ') %></p>
-      </li>
+      <% pokemonTypes.forEach(function(type) { %>
+        <% type.pokemon.forEach(function(pokemon) { %>
+          <li class="pokemon-item <%= type.type %>">
+            <img class="pokemon-image" src="<%= pokemon.sprites.front_default %>" alt="<%= pokemon.name %>">
+            <h3 class="pokemon-name"><%= type.type %></h3>
+            <p class="pokemon-details"><%= pokemon.types.join(', ') %></p>
+          </li>
+        <% }); %>
       <% }); %>
     </ul>
   </div>
+  
+
+
+  </div>
 </body>
 
-</html>
 
