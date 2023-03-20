@@ -1,5 +1,10 @@
 body {
-  background-color: #DF2E38;
+  background: #200122;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6f0000, #200122);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6f0000, #200122); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  
 }
 .pokemon-list {
   display: flex;
@@ -14,20 +19,295 @@ body {
   overflow: hidden;
   text-align: center;
 }
-.pokemon-type {
-  color: black;
-  text-align: center;
-  overflow: hidden;
-  animation: slide-in 1.5s ease-out both;
+/* item fuego*/
+.pokemon-item.fire {
+  background: linear-gradient(to right, #f99610 0%, #febb0b 20%, #f33 40%, #f99610 60%, #febb0b 80%, #f33 100%);
+  background-size: 200% 200%;
+  animation: burn 2s ease-in-out infinite;
+}
+@keyframes burn {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #f33;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #f99610;
+  }
+}
+/*fin item fuego*/
+
+.pokemon-item.water {
+  background: linear-gradient(to right, #0077be 0%, #00bfff 20%, #7fc7d9 40%, #00bfff 60%, #0077be 80%, #0033cc 100%);
+  background-size: 200% 200%;
+  animation: flow 2s ease-in-out infinite;
 }
 
-@keyframes slide-in {
-  0% { transform: translateX(-100%); }
-  25% { transform: translateX(-75%); }
-  50% { transform: translateX(-50%); }
-  75% { transform: translateX(-25%); }
-  100% { transform: translateX(0); }
+@keyframes flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #7fc7d9;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #7fc7d9;
+  }
 }
+.pokemon-item.dark {
+  background: linear-gradient(to right, #1c1c1c 0%, #333333 20%, #4d4d4d 40%, #333333 60%, #1c1c1c 80%, #000000 100%);
+  background-size: 200% 200%;
+  animation: darkGlow 2s ease-in-out infinite;
+}
+
+@keyframes darkGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #333333, 0 0 5px 2px #1c1c1c;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #333333, 0 0 10px 5px #1c1c1c;
+  }
+}
+
+.pokemon-item.rock {
+  background: linear-gradient(to right, #8B4513 0%, #A0522D 20%, #D2B48C 40%, #A0522D 60%, #8B4513 80%, #7B3F00 100%);
+  background-size: 200% 200%;
+  animation: rockGlow 2s ease-in-out infinite;
+}
+
+@keyframes rockGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #D2B48C;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #D2B48C;
+  }
+}
+.pokemon-item.ground {
+  background: linear-gradient(to right, #c2b280 0%, #dbcba4 20%, #a48a69 40%, #dbcba4 60%, #c2b280 80%, #bfa573 100%);
+  background-size: 200% 200%;
+  animation: groundGlow 2s ease-in-out infinite;
+}
+
+@keyframes groundGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #a48a69;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #a48a69;
+  }
+}
+.pokemon-item.bug {
+  background: linear-gradient(to right, #8bc34a 0%, #cddc39 20%, #e6ee9c 40%, #cddc39 60%, #8bc34a 80%, #689f38 100%);
+  background-size: 200% 200%;
+  animation: bugGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes bugGlow {
+  0% {
+  background-position: 0% 50%;
+  }
+  50% {
+  background-position: 100% 50%;
+  }
+  100% {
+  background-position: 0% 50%;
+  }
+  0%, 100% {
+    box-shadow: 0 0 10px 5px #cddc39;
+  }
+  50% {
+    box-shadow: 0 0 20px 10px #cddc39;
+  }
+  }
+  .pokemon-item.flying {
+    background: linear-gradient(to right, #87CEEB 0%, #B0E0E6 20%, #ADD8E6 40%, #87CEEB 60%, #B0E0E6 80%, #ADD8E6 100%);
+    background-size: 200% 200%;
+    animation: fly 2s ease-in-out infinite;
+  }
+  
+  @keyframes fly {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #ADD8E6;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #ADD8E6;
+    }
+  }
+  .pokemon-item.dragon {
+    background: linear-gradient(to right, #8F2D56 0%, #D53E78 20%, #F36A9A 40%, #D53E78 60%, #8F2D56 80%, #5E121C 100%);
+    background-size: 200% 200%;
+    animation: dragonFire 2s ease-in-out infinite;
+  }
+  
+  @keyframes dragonFire {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #F36A9A;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #F36A9A;
+    }
+  }
+  .pokemon-item.ice {
+    background: linear-gradient(to right, #7cd6d1 0%, #c8e4e3 20%, #f6f6f6 40%, #c8e4e3 60%, #7cd6d1 80%, #29a7a4 100%);
+    background-size: 200% 200%;
+    animation: iceGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes iceGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #f6f6f6;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #c8e4e3;
+    }
+  }
+  .pokemon-item.fairy {
+    background: linear-gradient(to right, #f8cdfc 0%, #c77dff 20%, #7d5fc2 40%, #c77dff 60%, #f8cdfc 80%, #ffffff 100%);
+    background-size: 200% 200%;
+    animation: fairyGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes fairyGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #c77dff;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #c77dff;
+    }
+  }
+  .pokemon-item.ghost {
+    background: linear-gradient(to right, #5f5f5f 0%, #808080 20%, #b3b3b3 40%, #808080 60%, #5f5f5f 80%, #333333 100%);
+    background-size: 200% 200%;
+    animation: ghostGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes ghostGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #b3b3b3, 0 0 5px 2px #5f5f5f;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #b3b3b3, 0 0 10px 5px #5f5f5f;
+    }
+  }
+  .pokemon-item.normal {
+    background: linear-gradient(to right, #c2c2a3 0%, #e6e6cc 20%, #d9d9c3 40%, #e6e6cc 60%, #c2c2a3 80%, #b3b3b3 100%);
+    background-size: 200% 200%;
+    animation: normalGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes normalGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+    0%, 100% {
+      box-shadow: 0 0 10px 5px #d9d9c3, 0 0 5px 2px #e6e6cc;
+    }
+    50% {
+      box-shadow: 0 0 20px 10px #c2c2a3, 0 0 10px 5px #b3b3b3;
+    }
+  }
+  
+  
+  
+  
+  
+  
+    
+
+
+
 
 .pokemon-container {
   display: flex;
@@ -92,5 +372,11 @@ body {
 .pokemon-item-flying:hover .pokemon-image {
   transform: translate(-50%, -50%) scale(1);
 }
-
-
+@media screen and (max-width: 768px)  {
+ header{
+  width: 100%;
+ }
+  .navbar-brand{
+    display: none;
+  }
+}

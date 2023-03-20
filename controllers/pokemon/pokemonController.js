@@ -20,7 +20,7 @@ const pokemonController = {
           types: data.types.map((type) => type.type.type),
           sprites: data.sprites
         };
-        res.render('pokemons/pokemon', { pokemon });
+        res.render('pokemons/pokemon', { pokemon,type:[types] });
       },
     
 }
